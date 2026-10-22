@@ -1,12 +1,400 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithor Privacy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de privacidad · MITHOR</title>
+<meta name="description" content="Política de privacidad de MITHOR, el control de brillo para Windows. MITHOR no recopila, transmite ni vende datos personales.">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://tony-toaf86.github.io/mithor-privacy/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Política de privacidad · MITHOR">
+<meta property="og:description" content="MITHOR no recopila, transmite ni vende datos personales. Todo se queda en tu equipo.">
+<meta property="og:url" content="https://tony-toaf86.github.io/mithor-privacy/">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #26303c;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --accent: #f0a43a;
+    --accent-soft: rgba(240, 164, 58, 0.12);
+    --code-bg: #1c232d;
+    --max: 780px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #ffffff;
+      --surface: #f6f8fa;
+      --border: #d8dee4;
+      --text: #1f2328;
+      --muted: #59636e;
+      --accent: #a35a00;
+      --accent-soft: rgba(163, 90, 0, 0.10);
+      --code-bg: #eef1f4;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.68 "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    padding: 0 20px 72px;
+  }
+  .wrap { max-width: var(--max); margin: 0 auto; }
+
+  header {
+    padding: 56px 0 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+  }
+  .brand {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .lead {
+    font-size: 18px;
+    color: var(--text);
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin: 0 0 40px;
+  }
+
+  h2 {
+    font-size: 21px;
+    margin: 44px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.01em;
+  }
+  h3 { font-size: 16px; margin: 26px 0 8px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: currentColor; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  code {
+    font: 0.88em/1.4 "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1px 6px;
+    word-break: break-word;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 20px;
+    font-size: 14.5px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  td code { font-size: 0.85em; }
+  td:nth-child(2) { width: 42%; }
+  td:nth-child(2) code { font-size: 0.78em; white-space: nowrap; }
+
+  .note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 0 0 20px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .note strong { color: var(--text); }
+
+  .summary-en {
+    margin-top: 56px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 26px;
+  }
+  .summary-en h2 { margin-top: 0; border: 0; font-size: 18px; }
+  .summary-en p, .summary-en li { font-size: 15px; color: var(--muted); }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer p { margin-bottom: 8px; }
+
+  @media (max-width: 640px) {
+    header { padding-top: 36px; }
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; padding: 4px 0; }
+    td { border: 0; padding: 6px 14px; }
+    td:first-child { font-weight: 600; }
+  }
+</style>
 </head>
 <body>
-    <h1>Politica de privacidad de Mithor</h1>
-    
+<div class="wrap">
+
+  <header>
+    <span class="brand">MITHOR</span>
+    <h1>Política de privacidad</h1>
+    <p class="meta">Última actualización: 21 de octubre de 2026 · Aplica a MITHOR 1.1 y versiones posteriores</p>
+  </header>
+
+  <p class="lead">
+    <strong>MITHOR no recopila, transmite ni vende datos personales.</strong>
+    No tiene telemetría, ni cuentas de usuario, ni publicidad, ni actualizador automático.
+    Todo lo que la aplicación guarda se queda en tu equipo.
+  </p>
+
+  <h2>1. Quién es el responsable</h2>
+  <p>
+    MITHOR es una aplicación de escritorio de código abierto para Windows que controla el brillo de
+    las pantallas. La desarrolla y mantiene el equipo de MITHOR, con el código público en
+    <a href="https://github.com/Tony-Toaf86/MITHOR-PROGRAM">github.com/Tony-Toaf86/MITHOR-PROGRAM</a>.
+  </p>
+  <p>
+    Esta política describe qué hace la aplicación con la información de tu equipo. No cubre lo que
+    hagan terceros con sus propios servicios, que se rigen por sus propias políticas.
+  </p>
+
+  <h2>2. Resumen</h2>
+  <ul>
+    <li><strong>No se recogen datos.</strong> Ni nombre, ni correo, ni IP, ni identificadores del equipo.</li>
+    <li><strong>No hay telemetría ni analítica.</strong> La aplicación no mide cómo la usas ni envía informes.</li>
+    <li><strong>No hay conexión a Internet.</strong> MITHOR funciona completamente sin red.</li>
+    <li><strong>No hay publicidad ni rastreo.</strong> Tampoco en esta página web.</li>
+    <li><strong>Todo es local.</strong> Los ajustes y los registros se guardan en tu propio equipo.</li>
+  </ul>
+
+  <h2>3. Qué información no se recoge</h2>
+  <p>MITHOR no recoge, solicita ni transmite ninguna de las siguientes categorías:</p>
+  <ul>
+    <li>Datos de identificación: nombre, correo electrónico, teléfono, dirección.</li>
+    <li>Datos del equipo: nombre del equipo, usuario de Windows, dirección IP, identificadores de hardware.</li>
+    <li>Datos de uso: qué pantallas controlas, qué brillo eliges, con qué frecuencia abres la aplicación.</li>
+    <li>Contenido: archivos, ventanas, capturas de pantalla, texto o actividad.</li>
+    <li>Ubicación, contactos, cámara, micrófono o cualquier otro sensor.</li>
+  </ul>
+
+  <h2>4. Qué se guarda en tu equipo</h2>
+  <p>
+    Para funcionar, MITHOR necesita recordar tus preferencias y dejar rastro de diagnóstico. Todo se
+    escribe en el disco local y nunca sale del equipo.
+  </p>
+  <table>
+    <thead>
+      <tr><th>Qué</th><th>Dónde</th><th>Para qué</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Configuración</td>
+        <td><code>%LOCALAPPDATA%\MITHOR\settings.json</code></td>
+        <td>Brillo por pantalla, método de control, atajos, preferencias.</td>
+      </tr>
+      <tr>
+        <td>Registros de la aplicación</td>
+        <td><code>%LOCALAPPDATA%\MITHOR\logs\</code></td>
+        <td>Diagnóstico local. El nivel detallado es opcional y está desactivado por defecto.</td>
+      </tr>
+      <tr>
+        <td>Registros del servicio</td>
+        <td><code>C:\ProgramData\MITHOR\logs</code></td>
+        <td>Arranque del servicio y lanzamiento del agente en tu sesión.</td>
+      </tr>
+      <tr>
+        <td>Programa instalado</td>
+        <td><code>C:\Program Files\MITHOR</code></td>
+        <td>Archivos de la aplicación y el desinstalador.</td>
+      </tr>
+      <tr>
+        <td>Inicio automático</td>
+        <td><code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code></td>
+        <td>Solo si activas «Iniciar con Windows». Se elimina al desactivarlo.</td>
+      </tr>
+      <tr>
+        <td>Entrada de desinstalación</td>
+        <td><code>HKLM\...\Uninstall\MITHOR</code></td>
+        <td>Para que aparezca en «Agregar o quitar programas».</td>
+      </tr>
+      <tr>
+        <td>Registro del instalador</td>
+        <td><code>%TEMP%\mithor-setup.log</code></td>
+        <td>Diagnóstico de la instalación o desinstalación.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note">
+    <strong>Puedes borrarlo cuando quieras.</strong> Al desinstalar MITHOR se eliminan los archivos y
+    el registro de la aplicación; los ajustes y los registros de tu perfil se conservan para que una
+    reinstalación mantenga tus preferencias. Se pueden borrar a mano desde
+    <strong>Ajustes → Abrir carpeta de datos</strong> en la propia aplicación.
+  </div>
+  <p>
+    Los registros locales pueden contener datos técnicos de tu equipo, como nombres de pantallas,
+    resoluciones o rutas de archivos. No se envían a ningún sitio; si decides compartirlos para pedir
+    ayuda, revísalos antes.
+  </p>
+
+  <h2>5. Conexiones de red</h2>
+  <p>
+    <strong>La aplicación MITHOR no abre ninguna conexión de red.</strong> No comprueba actualizaciones,
+    no descarga componentes, no envía diagnósticos y no consulta servidores de ningún tipo. Puedes
+    verificarlo en el código fuente: la aplicación no incluye clases de red.
+  </p>
+  <p>
+    La única salida a Internet ocurre cuando <strong>tú</strong> eliges abrir un enlace desde la
+    aplicación, por ejemplo la política de privacidad o el repositorio del proyecto. En ese caso se
+    abre tu navegador habitual y se aplican las políticas del sitio que visites.
+  </p>
+  <p>
+    El control de brillo por DDC/CI se comunica con el monitor a través del cable de vídeo
+    (HDMI, DisplayPort, DVI o VGA). Ese canal no es una conexión de red y no transporta datos fuera
+    de tu equipo.
+  </p>
+
+  <h2>6. Servicios de terceros</h2>
+  <p>MITHOR en sí no usa servicios de terceros. Sí los usas, indirectamente, en estos casos:</p>
+  <ul>
+    <li>
+      <strong>GitHub Pages</strong> aloja esta página. Al visitarla, GitHub puede registrar la
+      dirección IP por motivos de seguridad, según su
+      <a href="https://docs.github.com/es/site-policy/privacy-policies/github-privacy-statement">política de privacidad</a>.
+      Esta página no usa cookies, analítica ni recursos externos.
+    </li>
+    <li>
+      <strong>GitHub Releases</strong> distribuye las descargas oficiales. La descarga se rige por la
+      política de GitHub.
+    </li>
+    <li>
+      <strong>VirusTotal</strong> u otros analizadores pueden inspeccionar los archivos publicados
+      cuando una plataforma de distribución lo solicita. Es un análisis del archivo, no de tu equipo,
+      y no lo ejecuta MITHOR.
+    </li>
+  </ul>
+
+  <h2>7. Permisos y cambios en el sistema</h2>
+  <p>Para cumplir su función, el instalador realiza cambios que se muestran antes de aplicarlos:</p>
+  <ul>
+    <li>Copia la aplicación en <code>C:\Program Files\MITHOR</code>.</li>
+    <li>Registra el servicio de Windows <strong>MITHOR</strong>, con inicio automático y cuenta
+      <code>LocalSystem</code>. Ese nivel de permisos es necesario para acceder a DDC/CI.</li>
+    <li>Crea un acceso directo en el menú Inicio y, si lo pides, en el escritorio.</li>
+    <li>Añade la entrada de desinstalación en «Agregar o quitar programas».</li>
+  </ul>
+  <p>
+    El desinstalador revierte todo lo anterior: detiene y elimina el servicio, cierra la aplicación y
+    borra archivos, accesos directos y entradas del registro.
+  </p>
+
+  <h2>8. Menores</h2>
+  <p>
+    MITHOR no está dirigida a menores de edad y no recoge datos de ninguna persona, tampoco de menores.
+  </p>
+
+  <h2>9. Seguridad</h2>
+  <p>
+    Como no hay transmisión de datos, la superficie expuesta es mínima: no existen servidores de MITHOR
+    que puedan filtrar información tuya. El riesgo principal es local (por ejemplo, compartir un
+    registro de diagnóstico sin revisarlo), y se mitiga no compartiéndolos o revisándolos antes.
+  </p>
+  <p>
+    Las versiones publicadas se compilan de forma automática desde el repositorio público y se firman
+    digitalmente para que puedas comprobar su origen.
+  </p>
+
+  <h2>10. Tus derechos</h2>
+  <p>
+    No hay datos personales almacenados en servidores nuestros, así que no existe un registro sobre el
+    que ejercer derechos de acceso, rectificación o supresión. Sobre tu propio equipo tienes control
+    total: puedes borrar los ajustes y los registros, y desinstalar la aplicación en cualquier momento.
+  </p>
+
+  <h2>11. Cambios en esta política</h2>
+  <p>
+    Si la aplicación empieza a tratar datos de otra forma, esta página se actualizará y se cambiará la
+    fecha del encabezado. Los cambios importantes se anunciarán además en el repositorio del proyecto.
+    La versión vigente estará siempre en
+    <a href="https://tony-toaf86.github.io/mithor-privacy/">tony-toaf86.github.io/mithor-privacy</a>.
+  </p>
+
+  <h2>12. Contacto</h2>
+  <p>
+    Para cualquier duda sobre privacidad, abre una incidencia en
+    <a href="https://github.com/Tony-Toaf86/MITHOR-PROGRAM/issues">el repositorio del proyecto</a>.
+  </p>
+
+  <section class="summary-en" lang="en">
+    <h2>Summary in English</h2>
+    <p>
+      MITHOR is an open-source Windows brightness control utility. <strong>It does not collect,
+      transmit, or sell any personal data.</strong> There is no telemetry, no analytics, no accounts,
+      no advertising, and no auto-updater.
+    </p>
+    <ul>
+      <li>The application makes no network connections at all.</li>
+      <li>Settings and diagnostic logs are stored locally, under <code>%LOCALAPPDATA%\MITHOR</code>,
+        <code>C:\ProgramData\MITHOR\logs</code>, and <code>%TEMP%</code>, and never leave the device.</li>
+      <li>The installer writes to <code>Program Files</code>, registers a Windows service named
+        <code>MITHOR</code> that runs as <code>LocalSystem</code>, creates shortcuts, and adds an
+        uninstall entry. The uninstaller reverts all of it.</li>
+      <li>This page is hosted on GitHub Pages and uses no cookies, analytics, or external assets.</li>
+    </ul>
+    <p>
+      Questions: open an issue in the
+      <a href="https://github.com/Tony-Toaf86/MITHOR-PROGRAM/issues">project repository</a>.
+    </p>
+  </section>
+
+  <footer>
+    <p><strong>MITHOR</strong> · Control de brillo para Windows · Código abierto con licencia MIT.</p>
+    <p>
+      <a href="https://github.com/Tony-Toaf86/MITHOR-PROGRAM">Repositorio</a> ·
+      <a href="https://github.com/Tony-Toaf86/MITHOR-PROGRAM/releases">Descargas</a> ·
+      <a href="https://github.com/Tony-Toaf86/MITHOR-PROGRAM/issues">Soporte</a>
+    </p>
+    <p>Política de privacidad · Última actualización: 21 de octubre de 2026.</p>
+  </footer>
+
+</div>
 </body>
 </html>
